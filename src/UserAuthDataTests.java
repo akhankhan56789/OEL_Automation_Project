@@ -14,7 +14,7 @@ public class UserAuthDataTests {
         driver.get("https://automationexercise.com/login");
     }
 
-    // YEH HAI DATA-DRIVEN TESTING: Ek hi test alag data par chalega
+
     @ParameterizedTest
     @CsvSource({
             "arbaz1@test.com, password123",
@@ -26,7 +26,7 @@ public class UserAuthDataTests {
         driver.findElement(By.xpath("//input[@data-qa='login-password']")).sendKeys(password);
         driver.findElement(By.xpath("//button[@data-qa='login-button']")).click();
 
-        // Check kar rahe hain ke error message aaya ya nahi (invalid data hai toh message aana chahiye)
+
         WebElement error = driver.findElement(By.xpath("//p[contains(text(),'incorrect')]"));
         Assertions.assertTrue(error.isDisplayed());
     }

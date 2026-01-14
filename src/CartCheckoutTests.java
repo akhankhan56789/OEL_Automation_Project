@@ -22,7 +22,7 @@ public class CartCheckoutTests {
         WebElement add = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[text()='Add to cart'])[1]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", add);
 
-        // Modal ka pakka intezar
+
         boolean isDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("modal-content"))).isDisplayed();
         Assertions.assertTrue(isDisplayed);
     }
